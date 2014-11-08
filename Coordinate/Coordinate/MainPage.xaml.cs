@@ -34,7 +34,35 @@ namespace Coordinate
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GetGPSCoordinates();
+            
+            if(validateRadiusInput())
+            {
+                GetGPSCoordinates();
+            }
+            
+            
+        }
+
+        private Boolean validateRadiusInput()
+        {
+            Boolean isValid = false;
+            int radius;
+            if (Int32.TryParse(textBoxRadius.Text, out radius))
+            {
+                if (radius > 0)
+                {
+                    isValid = true;
+                }
+                else
+                {
+                    MessageBoxResult invalid = MessageBox.Show("Invalid input for radius");
+                }
+            }
+            else
+            {
+                MessageBoxResult invalid = MessageBox.Show("Invalid input for radius");
+            }
+            return isValid;
         }
 
         private async void GetGPSCoordinates()
@@ -72,6 +100,28 @@ namespace Coordinate
                     // something else happened acquring the location
                 }
             }
+        }
+
+        private String getValidCoordinates(String latitude, String longitude, int radius)
+        {
+
+            //String fileLines = System.IO.File.ReadAllLines();
+            return null;
+        }
+
+        private Boolean isInRadius(String latitude, String longitude, int radius)
+        {
+            Boolean valid = false;
+            Double latitudeDouble;
+            Double.TryParse(latitude, out latitudeDouble);
+            Double longitudeDouble;
+            Double.TryParse(longitude, out longitudeDouble);
+            Double distance = Math.Sqrt((latitudeDouble * latitudeDouble) + (longitudeDouble * longitudeDouble));
+            if (distance <= radius)
+            {
+                valid = true;
+            }
+            return valid;
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
