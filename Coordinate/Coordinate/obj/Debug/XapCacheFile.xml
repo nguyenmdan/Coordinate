@@ -1,0 +1,12 @@
+﻿<xapCache source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Bin\Debug\Coordinate_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="11/8/2014 3:32:38 AM">
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\obj\Debug\Coordinate.dll" archivePath="Coordinate.dll" lastWriteTime="11/8/2014 3:32:37 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="11/8/2014 3:32:37 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="11/8/2014 3:32:32 AM" />
+  <file source="C:\Users\Daniel Nguyen\Documents\Visual Studio 2013\Coordinate\Coordinate\Coordinate\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="11/8/2014 3:32:38 AM" />
+</xapCache>
