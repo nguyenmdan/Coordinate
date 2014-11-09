@@ -20,6 +20,9 @@ namespace Coordinate
     public partial class MainPage : PhoneApplicationPage
     {
         String[] flickrData;
+        bool[] validRecords;
+        String userLatitude;
+        String userLongitude;
         // Constructor
         public MainPage()
         {
@@ -46,13 +49,30 @@ namespace Coordinate
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(validateRadiusInput())
+
+            if (validateRadiusInput())
             {
                 GetGPSCoordinates();
+                
             }
-            
-            
+
+        }
+
+        private void nextPage()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < validRecords.Length; i++)
+            {
+                if (validRecords[i] == true)
+                {
+                    sb.Append("1");
+                }
+                else
+                {
+                    sb.Append("0");
+                }
+            }
+                NavigationService.Navigate(new Uri("/PhotoBrowser.xaml?msg=" + sb.ToString(), UriKind.Relative));
         }
 
         private Boolean validateRadiusInput()
@@ -96,11 +116,11 @@ namespace Coordinate
                     timeout: TimeSpan.FromSeconds(10)
                     );
 
-                String latitude = geoposition.Coordinate.Latitude.ToString("0.00");
-                String longitude = geoposition.Coordinate.Longitude.ToString("0.00");
+                userLatitude = geoposition.Coordinate.Latitude.ToString("0.00");
+                userLongitude = geoposition.Coordinate.Longitude.ToString("0.00");
 
-                MessageBoxResult coordinates = MessageBox.Show("Latitude: " + latitude + "\r\n" + "Longitude: " + longitude);
-                getValidCoordinates(latitude, longitude, Int32.Parse(textBoxRadius.Text));
+                MessageBoxResult coordinates = MessageBox.Show("Latitude: " + userLatitude + "\r\n" + "Longitude: " + userLongitude);
+                getValidCoordinates(Int32.Parse(textBoxRadius.Text));
             }
             catch (Exception ex)
             {
@@ -116,16 +136,22 @@ namespace Coordinate
             }
         }
 
-        private async void getValidCoordinates(String latitude, String longitude, int radius)
+        private async void getValidCoordinates(int radius)
         {
-            //IsolatedStorageFileStream fileStream = storage.OpenFile("data/data.csv", FileMode.Open, FileAccess.Read);
-            FileStream file = System.IO.File.OpenRead("data/data.csv");
-            byte[] b = new byte[1024];
-            UTF8Encoding temp = new UTF8Encoding(true);
-            while (file.Read(b, 0, b.Length) > 0)
+            String[] elementData = new String[4];
+            validRecords = new bool[flickrData.Length];
+            for (int i = 0; i < flickrData.Length; i++)
             {
-                Console.WriteLine(temp.GetString(b,0,b.Length - 1));
+                if (isInRadius(elementData[1], elementData[2], radius))
+                {
+                    validRecords[i] = true;
+                }
+                else
+                {
+                    validRecords[i] = false;
+                }
             }
+            nextPage();
         }
 
         private Boolean isInRadius(String latitude, String longitude, int radius)
@@ -135,7 +161,7 @@ namespace Coordinate
             Double.TryParse(latitude, out latitudeDouble);
             Double longitudeDouble;
             Double.TryParse(longitude, out longitudeDouble);
-            Double distance = Math.Sqrt((latitudeDouble * latitudeDouble) + (longitudeDouble * longitudeDouble));
+            Double distance = Math.Sqrt(Math.Pow((Double.Parse(userLatitude) - latitudeDouble), 2) + Math.Pow((Double.Parse(userLongitude) - longitudeDouble),2));
             if (distance <= radius)
             {
                 valid = true;

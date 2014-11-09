@@ -50,7 +50,7 @@
             <Button Content="select" HorizontalAlignment="Center" Height="100" Margin="0,508,0,0" VerticalAlignment="Top" Width="300"/>
 
         </Grid>
-        <Image x:Name="imageBrowser" HorizontalAlignment="Left" Height="503" Margin="10,0,0,0" VerticalAlignment="Top" Width="458" Grid.Row="1"/>
+        <Image x:Name="imageBrowser" HorizontalAlignment="Center" Height="327" VerticalAlignment="Center" Width="458" CacheMode="BitmapCache" Source="/Assets/images/0.jpg" Grid.RowSpan="2" Margin="10,138,12,0"/>
         <Button Content="&gt;" HorizontalAlignment="Left" Height="100" Margin="380,0,0,0" VerticalAlignment="Center" Width="100" FontSize="45" Grid.Row="1"/>
         <Button Content="&lt;" HorizontalAlignment="Left" Height="100" Grid.Row="1" VerticalAlignment="Center" Width="100" FontSize="45"/>
 
