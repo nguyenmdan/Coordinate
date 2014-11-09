@@ -119,7 +119,6 @@ namespace Coordinate
                 userLatitude = geoposition.Coordinate.Latitude.ToString("0.00");
                 userLongitude = geoposition.Coordinate.Longitude.ToString("0.00");
 
-                MessageBoxResult coordinates = MessageBox.Show("Latitude: " + userLatitude + "\r\n" + "Longitude: " + userLongitude);
                 getValidCoordinates(Int32.Parse(textBoxRadius.Text));
             }
             catch (Exception ex)

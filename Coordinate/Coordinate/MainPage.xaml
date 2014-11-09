@@ -49,7 +49,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="Start" HorizontalAlignment="Center" Height="88" Margin="0,519,0,0" VerticalAlignment="Top" Width="318" Click="Button_Click"/>
             <Image HorizontalAlignment="Center" Height="442" VerticalAlignment="Top" Width="436" Margin="10,0"/>
-            <TextBox x:Name="textBoxRadius" HorizontalAlignment="Left" Height="67" Margin="284,442,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Width="69" GotFocus="textBoxRadius_Click"/>
+            <TextBox x:Name="textBoxRadius" HorizontalAlignment="Left" Height="67" Margin="272,442,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Width="90" GotFocus="textBoxRadius_Click"/>
             <TextBlock HorizontalAlignment="Left" Height="62" Margin="85,461,0,0" TextWrapping="Wrap" Text="Find all photos in" Width="199" TextAlignment="Center" FontSize="25.333" VerticalAlignment="Top" />
             <TextBlock HorizontalAlignment="Left" Height="62" Margin="353,461,0,0" TextWrapping="Wrap" Text="m" VerticalAlignment="Top" Width="59" FontSize="25.333"/>
 

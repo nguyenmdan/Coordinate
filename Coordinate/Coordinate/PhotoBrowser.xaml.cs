@@ -48,7 +48,7 @@ namespace Coordinate
                     }
                 }
                 int j = 0;
-                while (!validImages[j] && j < validImages.Length)
+                while (!validImages[j] && j < validImages.Length-1)
                 {
                     j++;
                     
@@ -64,8 +64,11 @@ namespace Coordinate
         private void buttonPrevious_Click(object sender, RoutedEventArgs e)
         {
            int j = currentImage;
-           j--;
-           while (!validImages[j] && j >= 0)
+           if (j > 0)
+           {
+               j--;
+           }
+           while (!validImages[j] && j > 0)
            {
                j--;
            }
@@ -77,8 +80,11 @@ namespace Coordinate
         private void buttonNext_Click(object sender, RoutedEventArgs e)
         {
             int j = currentImage;
-            j++;
-            while (!validImages[j] && j < validImages.Length)
+            if (j < validImages.Length - 1)
+            {
+                j++;
+            }
+            while (!validImages[j] && j < validImages.Length-1)
             {
                 j++;
             }
@@ -94,8 +100,11 @@ namespace Coordinate
             metadata = selectedImage.Split(new Char[]{','});
             String latitude = metadata[1];
             String longitude = metadata[2];
-            BingMapsTask bingMapsTask = new BingMapsTask();
-            bingMapsTask.Center = new GeoCoordinate(Double.Parse(latitude), Double.Parse(longitude));
+            BingMapsDirectionsTask bingMapsDirectionsTask = new BingMapsDirectionsTask();
+            GeoCoordinate coordinates = new GeoCoordinate(Double.Parse(latitude), Double.Parse(longitude));
+            LabeledMapLocation destination = new LabeledMapLocation("Photo Coordinate", coordinates);
+            bingMapsDirectionsTask.End = destination;
+            bingMapsDirectionsTask.Show();
         }
     }
 }
